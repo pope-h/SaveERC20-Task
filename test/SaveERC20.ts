@@ -33,7 +33,10 @@ describe("SaveERC20", function () {
     await saveERC20.connect(owner).deposit(50);
     expect(await saveERC20.checkUserBalance(owner.address)).to.equal(50);
 
+    await saveERC20.connect(owner).withdraw(30);
+    expect(await saveERC20.checkUserBalance(owner.address)).to.equal(20);
+
     const contractBal = await saveERC20.connect(owner).checkContractBalance();
-    console.log(contractBal);
+    expect(contractBal).to.equal(20);
   });
 });
