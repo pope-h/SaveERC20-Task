@@ -1,7 +1,7 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const initialOwner = "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4";
+  const initialOwner = "0xbf4EE65FE67C291DfC34ffe2455ecA9d97DF9148";
 
   const ZBFactory = await ethers.getContractFactory("ZB");
   const ZB = await ZBFactory.deploy(initialOwner);
